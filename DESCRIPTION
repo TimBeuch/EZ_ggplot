@@ -1,0 +1,16 @@
+Package: EZggplot
+Type: Package
+Title: Package regroupant des fonctions pour la mise en forme de ggplot
+Version: 0.1.0
+Authors@R: 
+    person(given = "Timothe",
+           family = "Beuchon",
+           role = c("aut","cre"),
+           email = "beuchon.timothe@gmail.com")
+Description: Plusieurs fonctions : theme par defaut, labels, couleur.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    base
+RoxygenNote: 7.0.2
