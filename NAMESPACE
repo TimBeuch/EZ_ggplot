@@ -2,8 +2,8 @@
 
 export(EZ_colour_fill)
 export(EZ_colour_point)
-export(EZ_ggtheme)
 export(EZ_label)
+export(EZ_theme)
 import(ggplot2)
 import(stringr)
 importFrom(glue,glue)
