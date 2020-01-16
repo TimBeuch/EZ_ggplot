@@ -6,7 +6,7 @@
 #'
 #' @return character vector
 palette_couleur <- function(primary = "bleu",
-                            other = "gris",
+                            other = "jaune",
                             direction = 1) {
 
   palette = list( "bleu" = "#56B4E9",
@@ -20,20 +20,18 @@ palette_couleur <- function(primary = "bleu",
   stopifnot(primary %in% names(palette))
 
   function(n) {
-    if (n > 7) warning("La pellette de couleur n'a que 7 couleur")
+    if (n > 7) warning("La pallette de couleur n'a que 7 couleurs")
 
-    if (n == 2) {
+    if (n > 1) {
       other <- if (!other %in% names(palette)) {
         other
       } else {
         palette[other]
       }
-      color_list <- c(other,
-                         palette[primary])
-    } else {
-      color_list <- palette[1:n]
+      color_list <- c(palette[1:n-1],
+                      other)
+      color_list[1] <- palette[primary]
     }
-
     color_list <- unname(unlist(color_list))
     if (direction >= 0) color_list else rev(color_list)
   }
