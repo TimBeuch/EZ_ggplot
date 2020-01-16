@@ -7,7 +7,7 @@
 #'
 #' @return a ggplot object
 #' @export
-EZ_theme = function(legend = c("TRUE","bot"),
+EZ_theme = function(legend = c("TRUE","bot","FALSE"),
                     supress = c("none","x","y","both"),
                     rotate = c("none","x","y","both"),
                     angle = 90,
