@@ -2,9 +2,9 @@
 #'
 #' @param plot a ggplot object
 #' @param h1_title main title
-#' @param y_title titre ordonnée
+#' @param y_title titre ordonnee
 #' @param x_title titre abscisse
-#' @param leg_title est un moyen facile d'associer un titre sans avoir à spécifier pour quel type de donnée il s'applique
+#' @param leg_title est un moyen facile d'associer un titre sans avoir à specifier pour quel type de donnee il s'applique
 #' @param leg_couleur est un moyen d'associer un titre pour les couleurs (color/colour)
 #' @param leg_forme est un moyen d'associer un titre pour les formes (shape)
 #' @param leg_remplissage est un moyen d'associer un titre pour les contenants (fill)

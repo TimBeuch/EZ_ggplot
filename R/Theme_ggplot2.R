@@ -1,33 +1,30 @@
 #' ggplot theme
 #'
-#' @param supress permet de spécifier si on veut supprimer la mise en forme pour un des axes x,y ou les deux.
-#' @param LEGEND permet de spécifier si on veut la présence ou non de la légende.
+#' @param supress permet de specifier si on veut supprimer la mise en forme pour un des axes x,y ou les deux.
+#' @param legend permet de specifier si on veut la presence ou non de la legende, si bot alors la legende est en bas
 #' @param ... other
 #' @import ggplot2
 #'
 #' @return a ggplot object
 #' @export
-EZ_ggtheme = function(LEGEND = TRUE,
-                      supress = c("none","x","y","both"),
-                      rotate = c("none","x","y","both"),
-                      angle = 90,
-                      ...) {
+EZ_theme = function(legend = c("TRUE","bot"),
+                    supress = c("none","x","y","both"),
+                    rotate = c("none","x","y","both"),
+                    angle = 90,
+                    ...) {
 
+  legend <- match.arg(legend)
   supress <- match.arg(supress)
   rotate <- match.arg(rotate)
 
-if(!supress == "NULL" &
-   !rotate == "NULL"){
-if(identical(supress,
-             rotate) == TRUE){
-  message("Attention, vous demandez deux actions non compatibles pour un même axe")
-}
+if(!supress == "none" &
+   !rotate == "none"){
   if(supress =="both" &
-     rotate %in% c("x","y")){
+     rotate %in% c("x","y","both")){
     message("Attention, vous demandez deux actions non compatibles pour un même axe")
 }
   if(rotate =="both" &
-     supress %in% c("x","y")){
+     supress %in% c("x","y","both")){
     message("Attention, vous demandez deux actions non compatibles pour un même axe")
   }
   }else{}
@@ -59,10 +56,13 @@ if(identical(supress,
                                                     color = "black",
                                                     angle = 0) )
 
-  if (LEGEND == "FALSE") {
+  if (legend == "FALSE") {
     THEME = THEME +
       ggplot2::theme(legend.position = 'none')
-  } else{
+  } else if(legend == "bot"){
+    THEME = THEME +
+      ggplot2::theme(legend.position = 'bottom')
+    }else{
     THEME = THEME +
       ggplot2::theme(legend.text.align = 0.5,
                      legend.background = element_rect( fill = "gray97",
