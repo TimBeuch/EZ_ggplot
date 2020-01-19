@@ -111,7 +111,7 @@ if(!supress == "none" &
                                V1,
                                " = element_text(angle = ",
                                V2,
-                               "))"),
+                               ",hjust = 1))"),
                         list(V1 = rotate,
                              V2 = angle))
       chaine = eval(expr)
